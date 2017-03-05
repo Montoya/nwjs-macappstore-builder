@@ -42,7 +42,7 @@ m.configureInfoPlist = function(app_path, config, callback)
 m.configureHelpers = function(app_path, config, callback)
 {
     var files = [
-        app_path + '/Contents/Versions/' + config.version + '/nwjs Helper.app/Contents/Info.plist'
+        app_path + '/Contents/Versions/56.0.2924.87/nwjs Helper.app/Contents/Info.plist'
     ];
     for (var index = 0; index < files.length; index += 1)
     {
