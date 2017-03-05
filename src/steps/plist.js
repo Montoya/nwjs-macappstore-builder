@@ -39,19 +39,17 @@ m.configureInfoPlist = function(app_path, config, callback)
     });
 };
 
-m.configureHelpers = function(app_path, bundle_id, callback)
+m.configureHelpers = function(app_path, config, callback)
 {
     var files = [
-        app_path + '/Contents/Frameworks/nwjs Helper.app/Contents/Info.plist',
-        app_path + '/Contents/Frameworks/nwjs Helper EH.app/Contents/Info.plist',
-        app_path + '/Contents/Frameworks/nwjs Helper NP.app/Contents/Info.plist'
+        app_path + '/Contents/Versions/' + config.bundle_version + '/nwjs Helper.app/Contents/Info.plist'
     ];
     for (var index = 0; index < files.length; index += 1)
     {
         try
         {
             var plist = fs.readFileSync(files[index], {encoding: 'utf8'});
-            fs.writeFileSync(files[index], plist.replace('io.nwjs.nw', bundle_id), {encoding: 'utf8'});
+            fs.writeFileSync(files[index], plist.replace('io.nwjs.nw', config.bundle_id), {encoding: 'utf8'});
         }
         catch (error)
         {

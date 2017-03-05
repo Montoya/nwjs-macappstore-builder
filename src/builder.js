@@ -135,7 +135,7 @@ var m = function()
             function(next)
             {
                 log_output ? console.log('Configuring helpers...') : null;
-                Plist.configureHelpers(app_path, config.bundle_id, next);
+                Plist.configureHelpers(app_path, config, next);
             },
             function(next)
             {
