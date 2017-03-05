@@ -27,7 +27,7 @@ m.sign = function(app_path, identity, entitlements, callback)
     var commands = [
         function(next)
         {
-            var path = app_path + '/Contents/Versions/56.0.2924.87/nwjs Helper.app';
+            var path = app_path + '/Contents/Versions/55.0.2883.87/nwjs Helper.app';
             exec(_getSigningCommand(identity, child_path, path), next);
         },
         function(next)
