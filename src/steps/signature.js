@@ -32,6 +32,11 @@ m.sign = function(app_path, identity, entitlements, callback)
         },
         function(next)
         {
+            var path = app_path + '/Contents/Versions/55.0.2883.87/nwjs Framework.framework';
+            exec(_getSigningCommand(identity, child_path, path), next);
+        },
+        function(next)
+        {
             exec(_getSigningCommand(identity, parent_path, app_path), next);
         }
     ];
